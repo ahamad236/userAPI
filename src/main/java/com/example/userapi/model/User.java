@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
-
 @Data   // Generates getters, setters, toString, equals, hashCode
 @NoArgsConstructor     // Generates a no-args constructor
 @AllArgsConstructor     // Generates an all-args constructor
