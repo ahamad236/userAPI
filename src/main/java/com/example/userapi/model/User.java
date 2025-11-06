@@ -1,41 +1,45 @@
 package com.example.userapi.model;
 
-public class User {
+import lombok.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Data   // Generates getters, setters, toString, equals, hashCode
+@NoArgsConstructor     // Generates a no-args constructor
+@AllArgsConstructor     // Generates an all-args constructor
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
 
-    // Constructors
-    public User(){
-
-    }
-    public User(Long id, String name, String email){
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    // Getters & Setters
-    public Long getId(){
-        return  id;
-    }
-    public void setId(Long id){
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public void setName(String name){
-        this.name = name;
-    }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
-    public void setEmail(){
-        this.email = email;
-    }
-
 }
+
