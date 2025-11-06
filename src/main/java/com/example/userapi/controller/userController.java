@@ -14,7 +14,7 @@ public class userController {
 
     // Create User
     @PostMapping
-    public User createUser(@RequestBody User user){
+    public User createUser(@RequestBody User user) {
         user.setId(currentId++);
         userStore.put(user.getId(), user);
         return user;
@@ -22,21 +22,21 @@ public class userController {
 
     // Get All Users
     @GetMapping
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() {
         return new ArrayList<>(userStore.values());
     }
 
     // Get User by ID
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id){
+    public User getUserById(@PathVariable Long id) {
         return userStore.get(id);
     }
 
     // Update User
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User updatedUser){
+    public User updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         User existing = userStore.get(id);
-        if(existing != null){
+        if (existing != null) {
             existing.setName(updatedUser.getName());
             existing.setEmail(updatedUser.getEmail());
         }
@@ -45,9 +45,8 @@ public class userController {
 
     // Delete User
     @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable Long id){
+    public String deleteUser(@PathVariable Long id) {
         userStore.remove(id);
         return "User deleted";
     }
-
 }
