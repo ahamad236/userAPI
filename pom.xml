@@ -62,7 +62,7 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-<!--            <version>7.0.33</version> &lt;!&ndash; Updated to a valid version &ndash;&gt;-->
+            <version>8.4.0</version> <!-- Updated to a valid version -->
             <scope>runtime</scope>
         </dependency>
 
